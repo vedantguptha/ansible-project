@@ -1,0 +1,4 @@
+- name: "Install Java"
+  yum:
+   name: 'java-1.8*'
+   state: present

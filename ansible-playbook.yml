@@ -6,3 +6,4 @@
   roles:
     - "{{ v_role_path }}/miscellaneous"
     - "{{ v_role_path }}/apache"
+    - "{{ v_role_path }}/tomcat"

@@ -1,2 +1,4 @@
 ---
 # tasks file for tomcat
+- import_tasks: java.yml
+- import_tasks: tomcat.yml
