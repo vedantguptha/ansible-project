@@ -5,3 +5,4 @@
     v_role_path: "roles"
   roles:
     - "{{ v_role_path }}/miscellaneous"
+    - "{{ v_role_path }}/apache"
