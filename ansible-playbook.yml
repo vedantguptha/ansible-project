@@ -67,8 +67,8 @@
     - name: copy the war file
       aws_s3:
         bucket: lwplabs-artifacts-webapp
-        object: LoginRegisterApp.war
-        dest: /etc/tomcat/webapps/LoginRegisterApp.war
+        object: webapp.war
+        dest: /etc/tomcat/webapps/webapp.war
         mode: get
       tags: copy-war
 
