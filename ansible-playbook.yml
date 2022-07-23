@@ -1,4 +1,4 @@
-- name: Play 1 - Run Roles for misl softwares,Apache & Tomcat
+- name: Play 1 - Run Roles for miscellaneous softwares,Apache & Tomcat
   hosts: webservers
   become: yes
   vars:

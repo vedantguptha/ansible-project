@@ -3,7 +3,7 @@
 
 # Task 1 - installing vim, wget and nslookup
 
-- name: install the latest version of misl softwares
+- name: install the latest version of miscellaneous softwares
   package:
     name:
       - vim
