@@ -2,6 +2,6 @@
   hosts: webservers
   become: yes
   vars:
-    v_role_path: "/roles"
+    v_role_path: "roles"
   roles:
     - "{{ v_role_path }}/miscellaneous"
