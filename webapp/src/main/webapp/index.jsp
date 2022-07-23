@@ -5,7 +5,7 @@
   <link href="style.css"> 
 <body>
   <div style="padding-left:16px">
-<h1>2 Day Aws DevOps WorkShop </h1> 
+<h1>2 CI/CD Project 4 --->. Deploy the artifacts into Tomcat Server using Git, Maven, Jenkins, Ansible </h1> 
    
       
   </div>
