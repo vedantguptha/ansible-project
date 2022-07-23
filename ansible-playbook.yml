@@ -11,11 +11,15 @@
 - name: Play 2 - Custom configuration of Apache
   hosts: webservers
   become: yes
-  vars:
-    v_role_path: "roles"
-  roles:
-    - "{{ v_role_path }}/proxy-pass"
   tasks:
+    - name: copy the proxypass file
+      copy:
+        src: "roles/proxypass.conf"
+        dest: /etc/httpd/conf.d/proxypass.conf
+        owner: root
+        group: root
+      notify:
+        - reload apache
     - name: Set httpd_can_network_connect flag on and keep it persistent across reboots
       seboolean:
         name: httpd_can_network_connect
