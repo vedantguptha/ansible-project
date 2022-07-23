@@ -7,3 +7,13 @@
     - "{{ v_role_path }}/miscellaneous"
     - "{{ v_role_path }}/apache"
     - "{{ v_role_path }}/tomcat"
+
+
+- name: Play 5 - Start Tomcat Servers
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+    - name: start tomcat
+      command: nohup sh /etc/tomcat/bin/startup.sh
+      tags: start-tomcat
