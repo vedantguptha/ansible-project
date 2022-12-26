@@ -66,7 +66,7 @@
 
     - name: copy the war file
       aws_s3:
-        bucket: lwplabsmorningbatch
+        bucket: b31eveningbatch
         object: webapp.war
         dest: /etc/tomcat/webapps/webapp.war
         mode: get
