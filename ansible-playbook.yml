@@ -48,6 +48,12 @@
         link: /usr/bin/python3.9
         path: /usr/bin/python3
       tags: python-alternatives
+      
+    - name: Install Python 3.9
+      yum:
+        name: python3-pip
+        state: present
+      tags: python3 pip
 
 - name: Play 4 - Python library install and copying of War file
   hosts: webservers
@@ -61,7 +67,7 @@
           - boto
           - boto3
           - botocore
-        executable: pip3.9
+        executable: pip
       tags: boto-lib-install
 
     - name: copy the war file
