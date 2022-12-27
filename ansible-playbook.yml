@@ -36,16 +36,16 @@
   hosts: webservers
   become: yes
   tasks:
-    - name: Install Python 3.6
+    - name: Install Python 3.8
       yum:
-        name: python3.6
+        name: python38
         state: present
       tags: python-install
 
     - name: alternatives
       alternatives:
         name: python
-        link: /usr/bin/python3.6
+        link: /usr/bin/python3.8
         path: /usr/bin/python3
       tags: python-alternatives
 
@@ -61,7 +61,7 @@
           - boto
           - boto3
           - botocore
-        executable: pip3.6
+        executable: pip3.8
       tags: boto-lib-install
 
     - name: copy the war file
