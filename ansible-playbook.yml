@@ -36,7 +36,7 @@
   hosts: webservers
   become: yes
   tasks:
-    - name: Install Python 3.8
+    - name: Install Python 3.9
       yum:
         name: python
         state: present
@@ -45,7 +45,7 @@
     - name: alternatives
       alternatives:
         name: python
-        link: /usr/bin/python3.8
+        link: /usr/bin/python3.9
         path: /usr/bin/python3
       tags: python-alternatives
 
@@ -61,7 +61,7 @@
           - boto
           - boto3
           - botocore
-        executable: python3-pip
+        executable: pip3.9
       tags: boto-lib-install
 
     - name: copy the war file
