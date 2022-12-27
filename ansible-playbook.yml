@@ -61,7 +61,7 @@
           - boto
           - boto3
           - botocore
-        executable: pip3.6
+        executable: pip-3.7
       tags: boto-lib-install
 
     - name: copy the war file
