@@ -49,7 +49,7 @@
         path: /usr/bin/python3
       tags: python-alternatives
       
-    - name: Install Python 3.9
+    - name: pip module installation
       yum:
         name: python3-pip
         state: present
