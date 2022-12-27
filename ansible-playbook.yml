@@ -86,3 +86,7 @@
     - name: start tomcat
       command: nohup sh /etc/tomcat/bin/startup.sh
       tags: start-tomcat
+      
+    - name: View Public Ip Address
+      shell: curl icanhazip.com
+      
