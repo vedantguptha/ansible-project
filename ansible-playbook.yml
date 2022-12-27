@@ -38,7 +38,7 @@
   tasks:
     - name: Install Python 3.6
       yum:
-        name: python36
+        name: python3.6
         state: present
       tags: python-install
 
