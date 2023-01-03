@@ -7,9 +7,7 @@
   <div style="padding-left:16px">
 <h1>CI/CD Project 5 --->. Deploy the artifacts into Tomcat Server using Git, Maven, Jenkins,  Docker </h1>
     
-    
-    
-    <h1> Evening Batch </h1>
+ 
   </div>
 </body>
 </html>
