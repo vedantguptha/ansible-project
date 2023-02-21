@@ -5,9 +5,10 @@
   <link href="style.css"> 
 <body>
   <div style="padding-left:16px">
-<h1>CI/CD Project 5 --->. Deploy the artifacts into Tomcat Server using Git, Maven, Jenkins,  Docker </h1>
+<h1>CI/CD Project -3  Deploying Developed Changes
+to Production servers using Ansible. </h1>
     
- <h1> Sucessfully completed Docker CI-CD Project </h1>
+ <h1> Sucessfully completed CI-CD Project </h1>
   </div>
 </body>
 </html>
