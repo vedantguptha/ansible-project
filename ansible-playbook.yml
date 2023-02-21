@@ -72,7 +72,7 @@
 
     - name: copy the war file
       aws_s3:
-        bucket: b31eveningbatch
+        bucket: b39morningbatch
         object: webapp.war
         dest: /etc/tomcat/webapps/webapp.war
         mode: get
