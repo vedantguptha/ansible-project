@@ -8,7 +8,7 @@
 <h1>CI/CD Project -3  Deploying Developed Changes
 to Production servers using Ansible. </h1>
     
- <h1> Sucessfully completed CI-CD Project </h1>
+ <h1> Sucessfully completed CI/CD Project - 3 </h1>
   </div>
 </body>
 </html>
