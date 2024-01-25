@@ -37,20 +37,6 @@
           - botocore
         executable: pip
       tags: boto-lib-install
-    - name: Play 4 - Python library install and copying of War file
-  hosts: webservers
-  become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python
-  tasks:
-    - name: Install boto3 and botocore with pip3 module
-      pip:
-        name:
-          - boto
-          - boto3
-          - botocore
-        executable: pip
-      tags: boto-lib-install
     - name: copy the war file
       aws_s3:
         bucket: lwp-b72-morning-batch
