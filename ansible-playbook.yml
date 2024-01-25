@@ -35,7 +35,7 @@
           - boto
           - boto3
           - botocore
-        executable: pip
+#        executable: pip
       tags: boto-lib-install
     - name: copy the war file
       aws_s3:
