@@ -7,7 +7,7 @@
     - "{{ v_role_path }}/miscellaneous"
     - "{{ v_role_path }}/apache"
     - "{{ v_role_path }}/tomcat"
-    
+
 - name: Play 3 - Python Install
   hosts: webservers
   become: yes
@@ -17,50 +17,18 @@
         name: python
         state: present
       tags: python-install
-
     - name: alternatives
       alternatives:
         name: python
         link: /usr/bin/python3.9
         path: /usr/bin/python3
       tags: python-alternatives
-      
     - name: pip module installation
       yum:
         name: python3-pip
         state: present
       tags: python3 pip
 
-- name: Play 4 - Python library install and copying of War file
-  hosts: webservers
-  become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python
-  tasks:
-    - name: Install boto3 and botocore with pip3 module
-      pip:
-        name:
-          - boto
-          - boto3
-          - botocore
-        executable: pip
-      tags: boto-lib-install
 
-    - name: copy the war file
-      aws_s3:
-        bucket: lwp-b72-morning-batch
-        object: webapp.war
-        dest: /etc/tomcat/webapps/webapp.war
-        mode: get
-      tags: copy-war
-
-- name: Play 5 - Start Tomcat Servers
-  hosts: webservers
-  become: yes
-  become_user: root
-  tasks:
-    - name: start tomcat
-      command: nohup sh /etc/tomcat/bin/startup.sh
-      tags: start-tomcat
 
 
