@@ -17,12 +17,6 @@
         name: python
         state: present
       tags: python-install
-    - name: alternatives
-      alternatives:
-        name: python
-        link: /usr/bin/python3.9
-        path: /usr/bin/python3
-      tags: python-alternatives
     - name: pip module installation
       yum:
         name: python3-pip
