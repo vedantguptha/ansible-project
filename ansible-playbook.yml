@@ -8,6 +8,30 @@
     - "{{ v_role_path }}/apache"
     - "{{ v_role_path }}/tomcat"
 
+- name: Play 2 - Custom configuration of Apache
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: copy the proxypass file
+      copy:
+        src: "proxypass.conf"
+        dest: /etc/httpd/conf.d/proxypass.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify:
+        - reload apache
+    - name: Set httpd_can_network_connect flag on and keep it persistent across reboots
+      seboolean:
+        name: httpd_can_network_connect
+        state: yes
+        persistent: yes
+      tags: selinux
+
+  handlers:
+    - name: reload apache
+      service: name=httpd state=reloaded
+
 - name: Play 3 - Python Install
   hosts: webservers
   become: yes
@@ -17,6 +41,14 @@
         name: python
         state: present
       tags: python-install
+
+    - name: alternatives
+      alternatives:
+        name: python
+        link: /usr/bin/python3.9
+        path: /usr/bin/python3
+      tags: python-alternatives
+
     - name: pip module installation
       yum:
         name: python3-pip
@@ -37,12 +69,23 @@
           - botocore
         executable: pip
       tags: boto-lib-install
+
     - name: copy the war file
       aws_s3:
-        bucket: lwp-b72-morning-batch
+        bucket: b62morningbatch
         object: webapp.war
         dest: /etc/tomcat/webapps/webapp.war
         mode: get
+      tags: copy-war
+
+- name: Play 5 - Start Tomcat Servers
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+    - name: start tomcat
+      command: nohup sh /etc/tomcat/bin/startup.sh
+      tags: start-tomcat
       
   
 
